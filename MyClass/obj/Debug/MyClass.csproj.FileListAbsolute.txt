@@ -1,0 +1,12 @@
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\MyClass.dll.config
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\MyClass.dll
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\MyClass.pdb
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\EntityFramework.dll
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\EntityFramework.SqlServer.dll
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\EntityFramework.xml
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\bin\Debug\EntityFramework.SqlServer.xml
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\obj\Debug\MyClass.csproj.AssemblyReference.cache
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\obj\Debug\MyClass.csproj.CoreCompileInputs.cache
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\obj\Debug\MyClass.csproj.CopyComplete
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\obj\Debug\MyClass.dll
+D:\Tin hoc\PTUDWEB\PTUDW\MyClass\obj\Debug\MyClass.pdb

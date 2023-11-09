@@ -13,9 +13,11 @@ namespace MyClass.Model
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Không được để trống")]
+
         [Display(Name = "Tên loại hàng")]
+        [Required(ErrorMessage = "Tên loại sản phẩm không được để trống")]
         public string Name { get; set; }
+
         [Display(Name = "Tên rút gọn")]
         public string Slug { get; set; }
 
@@ -26,37 +28,30 @@ namespace MyClass.Model
         public int? Order { get; set; }
 
         [Display(Name = "Mô tả")]
-        [Required (ErrorMessage ="Không được để trống")]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
         public string MetaDesc { get; set; }
 
         [Display(Name = "Từ khóa")]
-        [Required(ErrorMessage = "Không được để trống")]
+        [Required(ErrorMessage = "Từ khóa không được để trống")]
         public string MetaKey { get; set; }
 
-        [Display(Name = "Tên rút gọn")]
-        [Required(ErrorMessage = "Không được để trống")]
+        [Required(ErrorMessage = "Người tạo không được để trống")]
+        [Display(Name = "Người tạo")]
         public int CreateBy { get; set; }
 
-        [Display(Name = "Tên rút gọn")]
-        [Required]
+        [Required(ErrorMessage = "Ngày tạo không được để trống")]
+        [Display(Name = "Ngày tạo")]
         public DateTime CreateAt { get; set; }
-        [Required(ErrorMessage = "Không được để trống")]
+
         [Display(Name = "Người cập nhật")]
-        
-        public int UpdateBy { get; set; }
+        public int? UpdateBy { get; set; }
 
-        [Display(Name = "Tên rút gọn")]
-        [Required]
-        public DateTime UpdateAt { get; set; }
+        [Display(Name = "Ngày cập nhật")]
+        public DateTime? UpdateAt { get; set; }
 
+        [Required(ErrorMessage = "Trạng thái không được để trống")]
         [Display(Name = "Trạng thái")]
-        [Required]
         public int Status { get; set; }
 
-       
-
-
-
-    
     }
 }

@@ -175,6 +175,7 @@ D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.Owin.Security.MicrosoftAcco
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.Owin.Security.OAuth.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.Owin.Security.Twitter.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.Web.Infrastructure.dll
+D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\MyClass.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Newtonsoft.Json.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Owin.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.Helpers.dll
@@ -185,6 +186,10 @@ D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.WebPages.Deployment.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.WebPages.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.WebPages.Razor.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\WebGrease.dll
+D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\MyClass.pdb
+D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\MyClass.dll.config
+D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\EntityFramework.xml
+D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\EntityFramework.SqlServer.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.Helpers.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.Mvc.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.Optimization.xml
@@ -194,8 +199,6 @@ D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.WebPages.Deployment.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\System.Web.WebPages.Razor.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Newtonsoft.Json.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Antlr3.Runtime.pdb
-D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\EntityFramework.xml
-D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\EntityFramework.SqlServer.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.AspNet.Identity.Core.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -214,6 +217,3 @@ D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\obj\Debug\ThuchanhPTUDW.csproj.CoreCompil
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\obj\Debug\ThuchanhPTUDW.csproj.CopyComplete
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\obj\Debug\ThuchanhPTUDW.dll
 D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\obj\Debug\ThuchanhPTUDW.pdb
-D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\MyClass.dll
-D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\MyClass.pdb
-D:\Tin hoc\PTUDWEB\PTUDW\ThuchanhPTUDW\bin\MyClass.dll.config

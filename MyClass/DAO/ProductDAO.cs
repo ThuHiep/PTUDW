@@ -1,57 +1,56 @@
 ﻿using MyClass.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
-using System.Net;
 
 namespace MyClass.DAO
 {
-
-    public class CategoriesDAO
+    public class ProductDAO
     {
         private MyDBContext db = new MyDBContext();
 
         //index
-        public List<Categories> getList()
+        public List<Products> getList()
         {
-            return db.Categories.ToList();
+            return db.Products.ToList();
         }
         //index dua vao status=1,2, con status=0 -> thùng rác
-        public List<Categories> getList(string status = "ALL")
+        public List<Products> getList(string status = "ALL")
         {
-            List<Categories> list = null;
-            switch (status) {
+            List<Products> list = null;
+            switch (status)
+            {
                 case "Index":
                     {
-                        list= db.Categories
-                            .Where(m=>m.Status !=0)
+                        list = db.Products
+                            .Where(m => m.Status != 0)
                             .ToList();
                         break;
                     }
                 case "Trash":
                     {
-                        list = db.Categories
+                        list = db.Products
                             .Where(m => m.Status == 0)
                             .ToList();
                         break;
                     }
-                    default:
+                default:
                     {
-                        list = db.Categories.ToList();
+                        list = db.Products.ToList();
                         break;
 
                     }
             }
-            
+
             return list;
         }
 
 
         //details
-        public  Categories getRow(int? id)
+        public Products getRow(int? id)
         {
             if (id == null)
             {
@@ -59,34 +58,32 @@ namespace MyClass.DAO
             }
             else
             {
-                return db.Categories.Find(id);
+                return db.Products.Find(id);
 
             }
 
         }
 
         //create
-        public int Insert(Categories row)
+        public int Insert(Products row)
         {
-            db.Categories.Add(row);
-            
+            db.Products.Add(row);
+
             return db.SaveChanges();
         }
 
 
         //edit
-        public int Update(Categories row)
+        public int Update(Products row)
         {
             db.Entry(row).State = EntityState.Modified;
             return db.SaveChanges();
         }
         //delete
-        public  int Delete(Categories row)
+        public int Delete(Products row)
         {
-            db.Categories.Remove(row);
+            db.Products.Remove(row);
             return db.SaveChanges();
         }
     }
-
-        
 }

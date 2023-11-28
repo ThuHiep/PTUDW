@@ -5,6 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -30,7 +31,7 @@
                         <tr>
                             <th>@Html.DisplayNameFor(model => model.Id)</th>
                             <th>@Html.DisplayNameFor(model => model.Name)</th>
-                            <th>@Html.DisplayNameFor(model => model.ParentId)</th>
+                            <th>@Html.DisplayNameFor(model => model.ParentID)</th>
                             <th>@Html.DisplayNameFor(model => model.Order)</th>
                             <th>@Html.DisplayNameFor(model => model.CreateAt)</th>
                             <th>@Html.DisplayNameFor(model => model.CreateBy)</th>
@@ -44,7 +45,7 @@
                         <tr>
                             <td>@Html.DisplayFor(model => model.Id)</td>
                             <td>@Html.DisplayFor(model => model.Name)</td>
-                            <td>@Html.DisplayFor(model => model.ParentId)</td>
+                            <td>@Html.DisplayFor(model => model.ParentID)</td>
                             <td>@Html.DisplayFor(model => model.Order)</td>
                             <td>@Html.DisplayFor(model => model.CreateAt)</td>
                             <td>@Html.DisplayFor(model => model.CreateBy)</td>

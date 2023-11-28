@@ -1,0 +1,206 @@
+﻿@model IEnumerable<MyClass.Model.Categories>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+
+
+}
+<body>
+    <main class="site-main">
+        @*================ Hero banner start =================*@
+       
+        <style>
+            .home {
+                position: relative;
+            }
+                .home .content {
+                    max-width: 50rem;
+                }
+
+                    .home .content h3 {
+                        font-size: 4rem;
+                        color: var(--pink);
+                        padding: 1rem 0;
+                        line-height: 1.5;
+                    }
+
+                    .home .content span {
+                        font-size: 2rem;
+                        color: #333;
+                    }
+
+                    .home .content p {
+                        font-size: 1.5rem;
+                        color: #999;
+                        padding: 1rem 0;
+                        line-height: 1.5;
+                        text-transform: none;
+                    }
+
+                    .home .content a {
+                        font-size: 1.5rem;
+                    }
+            .content {
+                position: absolute;
+                top: 30%;
+                left: 35%;
+                transform: translate(-50%, -50%);
+                text-align: left;
+                z-index: 2;
+                color: #fff; /* Màu chữ */
+            }
+
+            .poster {
+                position: relative;
+            }
+
+                .poster img {
+                    width: 100%;
+                    height: auto;
+                    margin-bottom:30px;
+                }
+           
+        </style>
+        <section class="home" id="home">
+
+            <div class="content">
+                <h3>Tulip Dreams by Sonn</h3>
+                <span> Natural & beautifull flowers</span>
+                <p>
+                    Tulip Dreams by Sonn luôn có những đóa hoa tulip độc đáo, sang trọng, đa dạng màu sắc và kiểu dáng, mang lại trải nghiệm mua sắm đầy cảm hứng.
+                </p>
+                
+            </div>
+            <div class="poster" >
+                <img class="img-fluid" src="~/Public/img/home/poster.png" alt="">
+            </div>
+        </section>
+        @*================ Hero banner end =================*@
+
+        @*================ Hero Carousel start =================*@
+        @Html.Action("Slider", "Module")
+        @*================ Hero Carousel end =================*@
+
+        @*================ trending product section start =================*@
+        @Html.Action("Product", "Site")
+        @*================ trending product section end =================*@
+        <section class="section-margin calc-60px">
+            <div class="container">
+                @foreach (var item in Model)
+                {
+                    @Html.Action("HomeProduct", "Site", new { @id = item.Id })
+                }
+            </div>
+        </section>
+
+        @*================ offer section start =================*@
+        <section class="offer" id="parallax-1" data-anchor-target="#parallax-1" data-300-top="background-position: 20px 30px" data-top-bottom="background-position: 0 20px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5">
+                        <div class="offer__content text-center">
+                            <h3>Up To 50% Off</h3>
+                            <h4>Winter Sale</h4>
+                            <p>Him she'd let them sixth saw light</p>
+                            <a class="button button--active mt-3 mt-xl-4" href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @*================ offer section end =================*@
+
+        @*================ Best Selling item  carousel =================*@
+
+        @*================ Best Selling item  carousel end =================*@
+
+        @*================ Blog section start =================*@
+        <section class="blog">
+            <div class="container">
+                <div class="section-intro pb-60px">
+                    <p>Popular Item in the market</p>
+                    <h2>Latest <span class="section-intro__style">News</span></h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card card-blog">
+                            <div class="card-blog__img">
+                                <img class="card-img rounded-0" src="~/Public/img/blog/blog1.jpg" alt="">
+                            </div>
+                            <div class="card-body">
+                                <ul class="card-blog__info">
+                                    <li><a href="#">By Admin</a></li>
+                                    <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                                </ul>
+                                <h4 class="card-blog__title"><a href="single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
+                                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card card-blog">
+                            <div class="card-blog__img">
+                                <img class="card-img rounded-0" src="~/Public/img/blog/blog2.jpg" alt="">
+                            </div>
+                            <div class="card-body">
+                                <ul class="card-blog__info">
+                                    <li><a href="#">By Admin</a></li>
+                                    <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                                </ul>
+                                <h4 class="card-blog__title"><a href="single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
+                                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="card card-blog">
+                            <div class="card-blog__img">
+                                <img class="card-img rounded-0" src="~/Public/img/blog/blog3.jpg" alt="">
+                            </div>
+                            <div class="card-body">
+                                <ul class="card-blog__info">
+                                    <li><a href="#">By Admin</a></li>
+                                    <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                                </ul>
+                                <h4 class="card-blog__title"><a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
+                                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @*================ Blog section end =================*@
+
+        @*================ Subscribe section start =================*@
+        <section class="subscribe-position">
+            <div class="container">
+                <div class="subscribe text-center">
+                    <h3 class="subscribe__title">Get Update From Anywhere</h3>
+                    <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+                    <div id="mc_embed_signup">
+                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+                            <div class="form-group ml-sm-auto">
+                                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+                                <div class="info"></div>
+                            </div>
+                            <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
+                            <div style="position: absolute; left: -5000px;">
+                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        @*================ Subscribe section end =================*@
+    </main>
+</body>

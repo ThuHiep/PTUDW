@@ -69,8 +69,8 @@
                             <div class="form-group">
                                 <label>Cấp cha <span class="text-danger"></span></label>
                                 <div class="col-md-10">
-                                    @Html.DropDownListFor(model => model.ParentId, (SelectList)@ViewBag.CatList, "Cấp 0", new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
+                                    @Html.DropDownListFor(model => model.ParentID, (SelectList)@ViewBag.ListCat, "Cấp 0", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ParentID, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 

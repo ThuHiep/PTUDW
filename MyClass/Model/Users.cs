@@ -13,36 +13,54 @@ namespace MyClass.Model
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
-        public string UsreName { get; set; }
+        [Display(Name = "Tên đăng nhập")]
+        public string Username { get; set; }
+
         [Required]
+        [Display(Name = "Mật khẩu")]
         public string Password { get; set; }
+
         [Required]
-        public string FullName { get; set; }
+        [Display(Name = "Họ tên người dùng")]
+        public string Fullname { get; set; }
+
         [Required]
+        [Display(Name = "Thư điện tử")]
         public string Email { get; set; }
+
         [Required]
+        [Display(Name = "Số điện thoại")]
         public string Phone { get; set; }
+
+        [Display(Name = "Hình")]
         public string Img { get; set; }
+
         [Required]
+        [Display(Name = "Giới tính")]
         public string Gender { get; set; }
+
+        [Required]
+        [Display(Name = "Quyền truy cập")]
         public string Role { get; set; }
-        
+
+        [Display(Name = "Địa chỉ")]
         public string Address { get; set; }
-    
-        [Required]
-        public int? CreateBy { get; set; }
-        [Required]
+
+        [Display(Name = "Ngày tạo")]
         public DateTime? CreateAt { get; set; }
-        [Required]
-        public int? UpdateBy { get; set; }
-        [Required]
+
+        [Display(Name = "Người tạo")]
+        public int? CreateBy { get; set; }
+
+        [Display(Name = "Ngày cập nhật")]
         public DateTime? UpdateAt { get; set; }
-        [Required]
+
+        [Display(Name = "Người cập nhật")]
+        public int? UpdateBy { get; set; }
+
+        [Display(Name = "Trạng thái")]
         public int? Status { get; set; }
-
-
-
-
     }
 }

@@ -7,10 +7,10 @@ namespace ThuchanhPTUDW.Library
 {
     public class XCart
     {
-        List<CartItem> list;
+        List<CartItem> list = new List<CartItem>();
         public List<CartItem> AddCart(CartItem cartitem, int productid)
         {
-            if (System.Web.HttpContext.Current.Session["MyCart"].Equals(""))//session chua co gio hang
+            if (System.Web.HttpContext.Current.Session["MyCart"].Equals(""))    //session chưa có giỏ hàng
             {
                 List<CartItem> list = new List<CartItem>();
                 list.Add(cartitem);
@@ -18,21 +18,21 @@ namespace ThuchanhPTUDW.Library
             }
             else
             {
-                //da co thong tin trong gio hang, lay thong tin cua session -> ep  kieu ve list 
+                //Đã có thông tin trong giỏ hàng, lấy thông tin của session -> Ép kiểu về list
                 List<CartItem> list = (List<CartItem>)System.Web.HttpContext.Current.Session["MyCart"];
-                //kiewm tra productid da co trong danh sach hay chua
+                //Kiểm tra productid đã có trong danh sách hay chưa?
                 int count = list.Where(m => m.ProductId == productid).Count();
-                if (count > 0)//da co trong danh sach gio hang truoc do
+                if (count > 0)  //Đã có trong danh sách giỏ hàng trước đó
                 {
                     cartitem.Ammount += 1;
-                    //cap nhat lai danh sach
+                    //Cập nhật lại danh sách
                     int vt = 0;
                     foreach (var item in list)
                     {
                         if (item.ProductId == productid)
                         {
                             list[vt].Ammount += 1;
-                            list[vt].Total = list[vt].Ammount * list[vt].Price;
+                            list[vt].Total = list[vt].Ammount * list[vt].SalePrice;
                         }
                         vt++;
                     }
@@ -40,7 +40,7 @@ namespace ThuchanhPTUDW.Library
                 }
                 else
                 {
-                    //them vao gio hang moi
+                    //Thêm vào giỏ hàng mới
                     list.Add(cartitem);
                     System.Web.HttpContext.Current.Session["MyCart"] = list;
                 }
@@ -52,17 +52,16 @@ namespace ThuchanhPTUDW.Library
         ///UpdateCart
         public void UpdateCart(string[] arramout)
         {
-
-            // da co thong tin trong gio hang, lay thong tin cua session -> ep kieu ve list
+            //Đã có thông tin trong giỏ hàng, lấy thông tin của session - > ép kiểu về list
             List<CartItem> list = this.GetCart();
             int vt = 0;
             foreach (CartItem cartitem in list)
             {
                 list[vt].Ammount = int.Parse(arramout[vt]);
-                list[vt].Total = list[vt].Ammount * list[vt].Price;
+                list[vt].Total = list[vt].Ammount * list[vt].SalePrice;
                 vt++;
             }
-            //cap nhat lai gio hang
+            //Cập nhật lại giỏ hàng
             System.Web.HttpContext.Current.Session["MyCart"] = list;
         }
         //////////////////////////////////////////////////////////////////
@@ -84,17 +83,16 @@ namespace ThuchanhPTUDW.Library
                         }
                         vt++;
                     }
-                    //cap nhat lai gio hang
+                    //Cập nhật lại giỏ hàng
                     System.Web.HttpContext.Current.Session["MyCart"] = list;
                 }
             }
             else
             {
-                //cap nhat lai gio hang
+                //Cập nhật lại giỏ hàng
                 System.Web.HttpContext.Current.Session["MyCart"] = "";
             }
         }
-
         //////////////////////////////////////////////////////////////////
         ///GetCart
         public List<CartItem> GetCart()

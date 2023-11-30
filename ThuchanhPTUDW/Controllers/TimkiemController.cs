@@ -21,7 +21,7 @@ namespace ThuchanhPTUDW.Controllers
             ViewBag.searchString = searchString;
             ProductsDAO productsDAO = new ProductsDAO();
             var products = productsDAO.getList("Index");
-            var product = products.Where(p => p.Name.Contains(searchString));
+            var product = products.Where(p => p.Name.ToLower().Contains(searchString));
             if (product != null)
             {
                 return View(product);

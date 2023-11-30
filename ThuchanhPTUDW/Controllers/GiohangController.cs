@@ -16,27 +16,60 @@ namespace ThuchanhPTUDW.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            //da co thong tin trong gio hang, lay thong tin cua session -> ep  kieu ve list 
+            //Đã có thông tin trong giỏ hàng, lấy thông tin của session -> Ép kiểu về list
             List<CartItem> list = xcart.GetCart();
             return View("Index", list);
-        }
 
+        }
         //////////////////////////////////////////////////////////////////
-        ///Them vao gio hang
+        ///Thêm vào giỏ hàng
         public ActionResult AddCart(int productid)
         {
             Products products = productsDAO.getRow(productid);
-            CartItem cartitem = new CartItem(products.Id, products.Name, products.Image, products.Price, 1);
-            //Them vao gio hang voi danh sách list phan tu = Session = MyCart
-            XCart xcart = new XCart();
-            List<CartItem> list = xcart.AddCart(cartitem, productid);
-            //chuyen huong trang
+            CartItem cartitem = new CartItem(products.Id, products.Name, products.Image, products.Price, products.SalePrice, 1);
+            //Thêm vào giỏ hàng với danh sách list phần tử = Session = MyCart
+            if (Session["MyCart"].Equals(""))   //session chưa có giỏ hàng
+            {
+                List<CartItem> list = new List<CartItem>();
+                list.Add(cartitem);
+                Session["MyCart"] = list;
+            }
+            else
+            {
+                //Đã có thông tin trong giỏ hàng, lấy thông tin của session -> Ép kiểu về list 
+                List<CartItem> list = (List<CartItem>)Session["MyCart"];
+                //Kiểm tra productid đã có trong danh sách hay chưa
+                int count = list.Where(m => m.ProductId == productid).Count();
+                if (count > 0)  //đã có trong danh sách giỏ hàng trước đó
+                {
+                    cartitem.Ammount += 1;
+                    //Cập nhật lại danh sách
+                    int vt = 0;
+                    foreach (var item in list)
+                    {
+                        if (item.ProductId == productid)
+                        {
+                            list[vt].Ammount += 1;
+                        }
+                        vt++;
+                    }
+                    Session["MyCart"] = list;
+                }
+                else
+                {
+                    //Thêm vào giỏ hàng mới
+                    list.Add(cartitem);
+                    Session["MyCart"] = list;
+                }
+            }
+            //Chuyển hướng trang
             return RedirectToAction("Index", "Giohang");
         }
 
+
         //////////////////////////////////////////////////////////////////
         ///DelCart
-        public ActionResult CartDel(int productid)
+        public ActionResult DelCart(int productid)
         {
             xcart.DelCart(productid);
             return RedirectToAction("Index", "Giohang");
@@ -46,11 +79,11 @@ namespace ThuchanhPTUDW.Controllers
         ///CartUpdate
         public ActionResult CartUpdate(FormCollection form)
         {
-            if (!string.IsNullOrEmpty(form["capnhat"]))//nut ThemCategory duoc nhan
+            if (!string.IsNullOrEmpty(form["capnhat"])) //nút ThemCategory được nhấn
             {
                 var listamount = form["amount"];
-                //chuyen danh sach thanh dang mang: vi du 1,2,3,...
-                var listarr = listamount.Split(',');//cat theo dau ,
+                //Chuyển danh sách thì dạng mảng: vi du 1,2,3,...
+                var listarr = listamount.Split(',');    //Ngắt theo dấu ","
                 xcart.UpdateCart(listarr);
             }
             return RedirectToAction("Index", "Giohang");
@@ -68,10 +101,10 @@ namespace ThuchanhPTUDW.Controllers
         ///ThanhToan
         public ActionResult ThanhToan()
         {
-            //Kiem tra thong tin dang nhap trang nguoi dung = Khach hang
+            //Kiểm tra thông tin đăng nhập trang người dùng = Khách hàng
             if (Session["UserCustomer"].Equals(""))
             {
-                return Redirect("~/dang-nhap");//chuyen huong den URL
+                return Redirect("~/dang-nhap"); //Chuyển hướng đến URL
             }
             return View("ThanhToan");
         }

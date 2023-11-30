@@ -162,7 +162,7 @@
         @Html.Action("Product", "Site")
         @*================ trending product section end =================*@
         <section class="section-margin calc-60px">
-            <div class="container">
+            <div class="container-fluid">
                 @foreach (var item in Model)
                 {
                     @Html.Action("HomeProduct", "Site", new { @id = item.Id })

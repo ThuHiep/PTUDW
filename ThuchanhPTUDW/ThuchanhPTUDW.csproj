@@ -278,6 +278,7 @@
     <Content Include="Public\dist\js\pages\dashboard.js" />
     <Content Include="Public\dist\js\pages\dashboard2.js" />
     <Content Include="Public\dist\js\pages\dashboard3.js" />
+    <Content Include="Public\img\about.jpg" />
     <Content Include="Public\img\blog\add.jpg" />
     <Content Include="Public\img\blog\author.png" />
     <Content Include="Public\img\blog\blog-2.jpg" />
@@ -2848,6 +2849,7 @@
     <Content Include="Views\Timkiem\Index.cshtml" />
     <Content Include="Views\Module\SupList.cshtml" />
     <Content Include="Views\Site\SupPage.cshtml" />
+    <Content Include="Views\Site\Gioithieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

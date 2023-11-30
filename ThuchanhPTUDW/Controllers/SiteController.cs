@@ -250,5 +250,11 @@ namespace ThuchanhPTUDW.Controllers
             List<ProductInfo> list = productsDAO.getListByListCatId(listcatid, 10);
             return View("HomeProduct", list);
         }
+        /////////////////////////////////////////////////////////////////////////////
+
+        public ActionResult Gioithieu()
+        {
+            return View();
+        }
     }
 }

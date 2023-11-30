@@ -67,6 +67,13 @@ namespace ThuchanhPTUDW
                url: "tim-kiem",
                defaults: new { controller = "Timkiem", action = "Index", id = UrlParameter.Optional }
            );
+            //Khai bao cho URL co dinh: gioi-thieu
+            routes.MapRoute(
+               name: "Gioithieu",
+               url: "gioi-thieu",
+               defaults: new { controller = "Site", action = "Gioithieu", id = UrlParameter.Optional }
+           );
+           
 
             //khai bao cho URL dong
             routes.MapRoute(

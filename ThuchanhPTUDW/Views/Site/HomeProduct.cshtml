@@ -8,11 +8,13 @@
 {
 
     <div class="section-intro pb-60px">
-        <p><a href="~/@item.Slug">Danh mục sản phẩm theo loại</a></p>
+        @*<p><a href="~/@item.Slug">Danh mục sản phẩm theo loại</a></p>*@
+        <h1 class="heading"><a href="~/@item.Slug"></a>  Processed Fishery <span>Product</span></h1>
         <h2>
             <span class="section-intro__style">@item.Name</span>
         </h2>
     </div>
+
     <div class="row">
         @foreach (var product in Model)
         {

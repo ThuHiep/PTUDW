@@ -30,27 +30,54 @@
                         soluong = cartSession.Count;
                     }
                 }
+               
+                <li class="nav-item">
+                    <div class="input-group mb-3 box-input">
+                        <form class="form" action="@Url.Action("Index","TimKiem")" method="post">
+                            <div class="position-relative">
+                                <input type="text" placeholder="Search..." id="searchString" name="searchString" class="form-control" />
+                                <button type="submit" class="btn btn-outline-secondary" id="searchButton">
+                                    <i class="ti-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
 
-                <li class="nav-item"><button><i class="ti-search"></i></button></li>
-                @*<li class="nav-item "><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">@soluong</span></button> </li>
-        <li class="nav-item"><a class="button button-header" href="~/gio-hang">Giỏ hàng</a></li>*@
 
-                @*<li class="nav-item">
-            <a class="button button-header" href="~/gio-hang">
-                <i class="ti-shopping-cart"></i><span class="nav-shop__circle">@soluong</span>
-            </a>
-        </li>*@
-                
-                <li class="nav-item"><a class="button button-header" href="~/gio-hang">
-                    <button>
-                        <i class="ti-shopping-cart"></i><span class="nav-shop__circle">@soluong</span>
-                
-                    </button></a>
-                 </li>
-                 <li class="nav-item"><button><i class="ti-user"></i></button></li>
+
+
+                <li class="nav-item">
+                    <a class="button button-header" href="~/gio-hang">
+                        <button>
+                            <i class="ti-shopping-cart"></i><span class="nav-shop__circle">@soluong</span>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="button button-header" href="~/dang-nhap">
+                        <button>
+                            <i class="ti-user"></i>
+                        </button>
+                    </a>
+                </li>
+
+
 
 
             </ul>
+
         </div>
     </div>
 </nav>
+<style>
+    #searchButton {
+        position: absolute;
+        right: 8px; /* Tùy chỉnh khoảng cách bên phải */
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: transparent;
+    }
+</style>
+

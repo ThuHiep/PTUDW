@@ -43,6 +43,10 @@ namespace ThuchanhPTUDW.Controllers
                             {
                                 return this.PostPage(slug);
                             }
+                        case "supplier":
+                            {
+                                return this.SupPage(slug);
+                            }
                         default:
                             {
                                 return this.Error404(slug);
@@ -56,7 +60,7 @@ namespace ThuchanhPTUDW.Controllers
                     //slug co trong bang Post voi PostType==post?
                     ProductsDAO productsDAO = new ProductsDAO();
                     PostsDAO postsDAO = new PostsDAO();
-
+                    SuppliersDAO suppliersDAO = new SuppliersDAO();
                     //tim slug co trong bang Products
                     Products products = productsDAO.getRow(slug);
                     if (products != null)
@@ -72,6 +76,11 @@ namespace ThuchanhPTUDW.Controllers
                         }
                         else
                         {
+                            Suppliers supplier = suppliersDAO.getRow(slug);
+                            if (supplier != null)
+                            {
+                                return this.SupPage(slug);
+                            }
                             return this.Error404(slug);
                         }
                     }
@@ -93,7 +102,7 @@ namespace ThuchanhPTUDW.Controllers
         public ActionResult Product()
         {
             ProductsDAO productsDAO = new ProductsDAO();
-            List<ProductInfo> list = productsDAO.getListBylimit(10);
+            List<ProductInfo> list = productsDAO.getListBylimit(25);
             return View("Product", list);
         }
 
@@ -159,7 +168,16 @@ namespace ThuchanhPTUDW.Controllers
             Posts posts = postsDAO.getRow(slug);
             return View("PostPage", posts);
         }
-
+        //Site/PostTopic
+        public ActionResult SupPage(string slug)
+        {
+            SuppliersDAO suppliersDAO = new SuppliersDAO();
+            Suppliers suppliers = suppliersDAO.getRow(slug);
+            ViewBag.Supplier = suppliers;
+            ProductsDAO productsDAO = new ProductsDAO();
+            List<Products> list = productsDAO.getProductSup(suppliers.Id);
+            return View("SupPage", list);
+        }
         /////////////////////////////////////////////////////////////////////////////
         //Site/Error404
         public ActionResult Error404(string slug)

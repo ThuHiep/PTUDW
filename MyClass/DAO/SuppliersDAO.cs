@@ -53,7 +53,15 @@ namespace MyClass.DAO
                 return db.Suppliers.Find(id);
             }
         }
+        /////////////////////////////////////////////////////////////////////////////////////
+        //Hien thi danh sach ncc
 
+        public Suppliers getRow(string slug)
+        {
+            return db.Suppliers
+                .Where(m => m.Slug == slug && m.Status == 1)
+                .FirstOrDefault();
+        }
         /////////////////////////////////////////////////////////////////////////////////////
         ///Them moi mot mau tin
         public int Insert(Suppliers row)
@@ -77,5 +85,10 @@ namespace MyClass.DAO
             db.Suppliers.Remove(row);
             return db.SaveChanges();
         }
+
+        //public Suppliers getRow(string slug)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

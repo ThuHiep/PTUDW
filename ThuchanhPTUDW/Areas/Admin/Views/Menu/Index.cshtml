@@ -78,6 +78,59 @@
                                     </div>
                                 </div>
 
+
+
+
+                                @*----Khu vuc nha cung cap----*@
+                                <div class="card">
+                                    <div class="card-header" id="headingSupplier">
+                                        <span>Nhà cung cấp</span>
+                                        <span class="float-right btn-sm btn-info" data-toggle="collapse" data-target="#collapseSupplier"
+                                              aria-expanded="true" aria-controls="collapseSupplier">
+                                            <i class="fa fa-plus"></i>
+                                        </span>
+                                    </div>
+
+                                    @*----Menu con nha cung cap----*@
+                                    <div id="collapseSupplier" class="collapse p-2 m-2" aria-labelledby="headingSupplier" data-parent="#accordionExample">
+                                        @foreach (var sup in ViewBag.SupList)
+                                        {
+                                            <fieldset class="form-group">
+                                                <input name="nameSupplier" value="@sup.Id" id="supplier_@sup.Id" type="checkbox" />
+                                                <label for="supplier_@sup.Id">@sup.Name</label>
+                                            </fieldset>
+                                        }
+                                        <fieldset class="form-group">
+                                            <input type="submit" name="ThemSupplier" value="Thêm" class="button btn-success form-control" />
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+
+
+                                @*----Khu vuc san pham----
+                                <div class="card">
+                                    <div class="card-header" id="headingProduct">
+                                        <span>Sản phẩm</span>
+                                        <span class="float-right btn-sm btn-info" data-toggle="collapse" data-target="#collapseProduct"
+                                              aria-expanded="true" aria-controls="collapseProduct">
+                                            <i class="fa fa-plus"></i>
+                                        </span>
+                                    </div>end_card-header
+                                    ----Menu con san pham----
+                                    <div id="collapseProduct" class="collapse p-2 m-2" aria-labelledby="headingProduct" data-parent="#accordionExample">
+                                        @foreach (var pro in ViewBag.ProList)
+                                        {
+                                            <fieldset class="form-group">
+                                                <input name="nameProduct" value="@pro.Id" id="supplier_@pro.Id" type="checkbox" />
+                                                <label for="product_@pro.Id">@pro.Name</label>
+                                            </fieldset>
+                                        }
+                                        <fieldset class="form-group">
+                                            <input type="submit" name="ThemProduct" value="Thêm" class="button btn-success form-control" />
+                                        </fieldset>
+                                    </div>
+                                </div>end_vitri_san_pham*@
                                 @*header, chủ đề bài viết*@
                                 <div class="card">
                                     <div class="card-header" id="headingTopic">

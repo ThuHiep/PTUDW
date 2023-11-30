@@ -12,6 +12,7 @@
     <script src="~/Public/js/jquery.dataTables.min.js"></script>
     <script>let table = new DataTable('#myTable');</script>
 }
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -58,7 +59,7 @@
                                 <td>@Html.DisplayFor(modelItem => item.Order)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Id)</td>
                                 <td>
-                                    <a href="@Url.Action("Undo","Supplier", new { id = item.Id })" class="btn-sm btn-info"> <i class="fa fa-undo"></i></a>
+                                    <a href="@Url.Action("Recover","Supplier", new { id = item.Id })" class="btn-sm btn-info"> <i class="fa fa-undo"></i></a>
                                     <a href="@Url.Action("Delete","Supplier", new { id = item.Id })" class="btn-sm btn-danger"> <i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>

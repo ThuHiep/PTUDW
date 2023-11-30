@@ -4,11 +4,9 @@
     var item = ViewBag.Categories;
 }
 
-<section class="section-margin calc-60px">
-    <div class="container">
-        <div class="section-intro pb-60px">
-            <p>Tất cả sản phẩm</p>
-            <h2>Tất cả <span class="section-intro__style">sản phẩm</span></h2>
+<section class="section-margin ">
+        <div class="section-intro ">
+            <h1 class="heading"> All Types Of  <span>Products</span></h1>
         </div>
         <div class="row">
             @foreach (var product in Model)
@@ -32,12 +30,11 @@
                         <div class="card-body">
                             <p>@product.CatName</p>
                             <h4 class="card-product__title"><a href="@product.Slug">@product.Name</a></h4>
-                            <p strong class="card-product__price text-success">@string.Format("{0:0,0.00,00}", @product.Price)<sup>đ</sup></p>
-                            <del><span class="danger card-product__price text-danger">@string.Format("{0:0,0.00,00}", @product.SalePrice)</span></del><sup>đ</sup>
+                            <p strong class="card-product__price text-success">@string.Format("{0:0,0.00,00}", @product.SalePrice)<sup>đ</sup></p>
+                            <del><span class="danger card-product__price text-danger">@string.Format("{0:0,0.00,00}", @product.Price)</span></del><sup>đ</sup>
                         </div>
                     </div>
                 </div>
             }
         </div>
-    </div>
 </section>

@@ -8,20 +8,36 @@
     @foreach (var product in Model)
     {
         <!-- ================ start banner area ================= -->
-        <section class="blog-banner-area" id="blog">
-            <div class="container h-100">
-                <div class="blog-banner">
-                    <div class="text-center">
-                        <h1>Chi tiết sản phẩm</h1>
-                        <nav aria-label="breadcrumb" class="banner-breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="@product.CategorySlug">@product.CatName</a></li>
-                            </ol>
-                        </nav>
+        <!--<section class="blog-banner-area" id="blog">
+                <div class="container h-100">
+                    <div class="blog-banner">
+                        <div class="text-center">
+                            <h1>Chi tiết sản phẩm</h1>
+                            <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="@product.CategorySlug">@product.CatName</a></li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>-->
+        <section class="detail">                       
+                        <div class="text-center">
+                            <h1>Chi tiết sản phẩm</h1>                               
+                                    <a href="@product.CategorySlug">@product.CatName</a>                               
+                        </div>            
+            </section>
+
+            <style>
+                .detail{
+                    margin-top: 50px;
+                }
+                .detail a{
+                    color: dimgrey;
+                }
+              
+            </style>
         <!--================ end banner area =================-->
         <!--================Single Product Area =================-->
         <div class="product_image_area">

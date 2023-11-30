@@ -292,7 +292,7 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
             products.Status = 2;
 
             //cap nhat gia tri cho UpdateAt/By
-            products.UpdateBy = Convert.ToInt32(Session["UserId"].ToString());
+            products.UpdateBy = Convert.ToInt32(Session["UserID"].ToString());
             products.UpdateAt = DateTime.Now;
 
             //Goi ham Update trong ProductDAO

@@ -52,6 +52,13 @@ namespace ThuchanhPTUDW.Controllers
             List<Categories> list = categoriesDAO.getListByPareantId(0);
             return View("CategoriesList", list);
         }
+        ///////////////////////////////////////////////////////////////////////////
+        public ActionResult SupList()
+        {
+            SuppliersDAO suppliersDAO = new SuppliersDAO();
+            List<Suppliers> list = suppliersDAO.getList("Index");
+            return View("SupList", list);
+        }
 
         ///////////////////////////////////////////////////////////////////////////
         ///Footer Menu

@@ -26,17 +26,47 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
 
         /////////////////////////////////////////////////////////////////////////////////////
         // Admin/Category/Detail: Hien thi mot mau tin
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Categories categories = categoryDAO.getRow(id);
+        //    if (categories == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(categories);
+        //}
         public ActionResult Details(int? id)
         {
+            List<Categories> ls = categoryDAO.getList("Index");
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                TempData["message"] = new XMessage("danger", "Không tìm thấy loại hàng");
+                return RedirectToAction("Index");
             }
             Categories categories = categoryDAO.getRow(id);
             if (categories == null)
             {
-                return HttpNotFound();
+                TempData["message"] = new XMessage("danger", "Không tìm thấy loại hàng");
             }
+            if (categories.ParentID == 0)
+            {
+                ViewBag.Name = categories.Name;
+            }
+            else
+            {
+                foreach (var i in ls)
+                {
+                    if (i.Id == categories.ParentID)
+                    {
+                        ViewBag.Name = i.Name;
+                    }
+                }
+            }
+
             return View(categories);
         }
 

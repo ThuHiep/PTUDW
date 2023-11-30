@@ -248,6 +248,7 @@ namespace MyClass.DAO
             return list;
         }
 
+
         /////////////////////////////////////////////////////////////////////////////////////
         //Hien thi danh sach 1 mau tin (ban ghi)
         public Products getRow(int? id)
@@ -389,5 +390,9 @@ namespace MyClass.DAO
             return relatedProducts;
         }
 
+        public List<Products> getProductSup(int id)
+        {
+            return db.Products.Where(p => p.SupplierId == id).ToList();
+        }
     }
 }

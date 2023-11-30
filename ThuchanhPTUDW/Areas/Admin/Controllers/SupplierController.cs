@@ -284,7 +284,7 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
             suppliers.Status = 2;
 
             //cap nhat gia tri cho UpdateAt/By
-            suppliers.UpdateBy = Convert.ToInt32(Session["UserID"].ToString());
+            suppliers.UpdateBy = Convert.ToInt32(Session["UserId"].ToString());
             suppliers.UpdateAt = DateTime.Now;
 
             //Goi ham Update trong SupplierDAO

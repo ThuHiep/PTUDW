@@ -19,7 +19,8 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
         TopicsDAO topicsDAO = new TopicsDAO();
         PostsDAO postsDAO = new PostsDAO();
         MenusDAO menusDAO = new MenusDAO();
-        SuppliersDAO suppliersDAO = new SuppliersDAO();//neu thich thi lam
+        SuppliersDAO suppliersDAO = new SuppliersDAO();
+        ProductsDAO productsDAO = new ProductsDAO();
 
         /////////////////////////////////////////////////////////////////////////////////////
         // GET: Admin/Menu
@@ -29,6 +30,7 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
             ViewBag.TopList = topicsDAO.getList("Index");//select * from Topics voi Status !=0
             ViewBag.PosList = postsDAO.getList("Index", "Page");//select * from Posts voi Status !=0
             List<Menus> menu = menusDAO.getList("Index");//select * from Menus voi Status !=0
+            ViewBag.SupList = suppliersDAO.getList("Index");//select * from Posts voi Status !=0
             return View("Index", menu);//truyen menu duoi dang model
         }
 
@@ -72,6 +74,81 @@ namespace ThuchanhPTUDW.Areas.Admin.Controllers
                     TempData["message"] = new XMessage("danger", "Chưa chọn danh mục loại sản phẩm");
                 }
             }
+            //Them Nha cung cap
+            if (!string.IsNullOrEmpty(form["ThemSupplier"]))
+            {
+                //kiem tra dau check cua muc con
+                if (!string.IsNullOrEmpty(form["nameSupplier"]))
+                {
+                    var listitem = form["nameSupplier"];
+                    //chuyen danh sach thanh dang mang: 1,2,3,4...
+                    var listarr = listitem.Split(',');//ngat mang thanh tung phan tu cach nhau boi dau ,
+                    foreach (var row in listarr)
+                    {
+                        int id = int.Parse(row);//ep kieu int
+                        //lay 1 ban ghi
+                        Suppliers suppliers = suppliersDAO.getRow(id);
+                        //ta ra menu
+                        Menus menu = new Menus();
+                        menu.Name = suppliers.Name;
+                        menu.Link = suppliers.Slug;
+                        menu.TypeMenu = "supplier";
+                        menu.Position = form["Position"];
+                        menu.ParentId = 0;
+                        menu.Order = 0;
+                        menu.CreateAt = DateTime.Now;
+                        menu.CreateBy = Convert.ToInt32(Session["UserID"].ToString());
+                        menu.UpdateAt = DateTime.Now;
+                        menu.UpdateBy = Convert.ToInt32(Session["UserID"].ToString());
+                        menu.Status = 2; //tam thoi chua xuat ban
+                        //Them vao DB
+                        menusDAO.Insert(menu);
+                    }
+                    TempData["message"] = new XMessage("success", "Thêm vào menu thành công");
+                }
+                else
+                {
+                    TempData["message"] = new XMessage("danger", "Chưa chọn nhà cung cấp");
+                }
+            }
+
+            ////Them San pham
+            //if (!string.IsNullOrEmpty(form["ThemProduct"]))
+            //{
+            //    //kiem tra dau check cua muc con
+            //    if (!string.IsNullOrEmpty(form["nameProduct"]))
+            //    {
+            //        var listitem = form["nameProduct"];
+            //        //chuyen danh sach thanh dang mang: 1,2,3,4...
+            //        var listarr = listitem.Split(',');//ngat mang thanh tung phan tu cach nhau boi dau ,
+            //        foreach (var row in listarr)
+            //        {
+            //            int id = int.Parse(row);//ep kieu int
+            //            //lay 1 ban ghi
+            //            Products products = productsDAO.getRow(id);
+            //            //ta ra menu
+            //            Menus menu = new Menus();
+            //            menu.Name = products.Name;
+            //            menu.Link = products.Slug;
+            //            menu.TypeMenu = "product";
+            //            menu.Position = form["Position"];
+            //            menu.ParentId = 0;
+            //            menu.Order = 0;
+            //            menu.CreateAt = DateTime.Now;
+            //            menu.CreateBy = Convert.ToInt32(Session["UserID"].ToString());
+            //            menu.UpdateAt = DateTime.Now;
+            //            menu.UpdateBy = Convert.ToInt32(Session["UserID"].ToString());
+            //            menu.Status = 2; //tam thoi chua xuat ban
+            //            //Them vao DB
+            //            menusDAO.Insert(menu);
+            //        }
+            //        TempData["message"] = new XMessage("success", "Thêm vào menu thành công");
+            //    }
+            //    else
+            //    {
+            //        TempData["message"] = new XMessage("danger", "Chưa chọn sản phẩm");
+            //    }
+            //}
 
             //-------------------------Topic------------------------//
             //Xu ly cho nút ThemTopic ben Index

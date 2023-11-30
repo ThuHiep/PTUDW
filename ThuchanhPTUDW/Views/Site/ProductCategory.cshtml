@@ -9,22 +9,49 @@
 }
 
 <body>
-    <!-- ================ start banner area ================= -->
+     @*================ start banner area ================= 
     <section class="blog-banner-area" id="category">
-        <div class="container h-100">
-            <div class="blog-banner">
-                <div class="text-center">
-                    <h1 class="text-uppercase">@item.Name</h1>
-                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="@item.Slug">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">@item.Name</li>
-                        </ol>
-                    </nav>
+            <div class="container h-100">
+                <div class="blog-banner">
+                    <div class="text-center">
+                        <h1 class="text-uppercase">@item.Name</h1>
+                        <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="@item.Slug">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">@item.Name</li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>*@
+    <section class="home-flower">
+            
+                
+                    <div class="text-center">
+                        <h1 class="text-uppercase">@item.Name</h1>
+                        <nav class="d-flex justify-content-center">
+                           
+                            <a href="@item.Slug">Home- @item.Name</a>
+                               
+                           
+                        </nav>
+                    </div>
+                
+            
+        </section>
+    <style>
+        .home-flower{
+            margin-top: 50px;
+        }
+        .home-flower a{
+            text-align: center;
+            display:flex;
+            justify-content: center;
+            color: dimgray;
+
+        }
+    </style>
     <!-- ================ end banner area ================= -->
     <!-- ================ category section start ================= -->
     <section class="section-margin--small mb-5">

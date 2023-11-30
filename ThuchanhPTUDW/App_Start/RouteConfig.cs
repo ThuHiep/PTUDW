@@ -54,6 +54,12 @@ namespace ThuchanhPTUDW
                url: "dang-nhap",
                defaults: new { controller = "Khachhang", action = "DangNhap", id = UrlParameter.Optional }
            );
+            //Khai bao cho URL co dinh: dăng-ky
+            routes.MapRoute(
+               name: "DangKy",
+               url: "dang-ky",
+               defaults: new { controller = "Khachhang", action = "DangKy", id = UrlParameter.Optional }
+           );
 
             //Khai bao cho URL co dinh: tim-kiem
             routes.MapRoute(

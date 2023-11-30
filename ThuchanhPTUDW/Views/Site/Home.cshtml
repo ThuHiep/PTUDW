@@ -8,11 +8,13 @@
 <body>
     <main class="site-main">
         @*================ Hero banner start =================*@
-       
+
         <style>
             .home {
                 position: relative;
+                margin: 0 20px;
             }
+
                 .home .content {
                     max-width: 50rem;
                 }
@@ -40,6 +42,7 @@
                     .home .content a {
                         font-size: 1.5rem;
                     }
+
             .content {
                 position: absolute;
                 top: 30%;
@@ -57,26 +60,100 @@
                 .poster img {
                     width: 100%;
                     height: auto;
-                    margin-bottom:30px;
                 }
-           
         </style>
         <section class="home" id="home">
+                <div class="content">
+                    <h3>Flower Dreams by Sonn</h3>
+                    <span> Natural & Beautifull Flowers</span>
+                    <p>
+                        Flower Dreams by Sonn luôn có những đóa hoa độc đáo, sang trọng, đa dạng màu sắc và kiểu dáng, mang lại trải nghiệm mua sắm đầy cảm hứng.
+                    </p>
 
-            <div class="content">
-                <h3>Tulip Dreams by Sonn</h3>
-                <span> Natural & beautifull flowers</span>
-                <p>
-                    Tulip Dreams by Sonn luôn có những đóa hoa tulip độc đáo, sang trọng, đa dạng màu sắc và kiểu dáng, mang lại trải nghiệm mua sắm đầy cảm hứng.
-                </p>
-                
-            </div>
-            <div class="poster" >
-                <img class="img-fluid" src="~/Public/img/home/poster.png" alt="">
-            </div>
+                </div>
+                <div class="poster">
+                    <img class="img-fluid" src="~/Public/img/home/poster.png" alt="">
+                </div>
+            
         </section>
         @*================ Hero banner end =================*@
 
+        <style>
+            .icon-container {
+                background: #eee;
+                display: flex;
+                gap: 1.5rem;
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+                margin: 0 20px;
+                justify-content: space-between;
+            }
+
+                .icon-container .icons {
+                    background: #fff;
+                    border: .1rem solid rgba(0, 0, 0, .1);
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+                    flex: 1 1 calc(25% - 1.5rem); 
+                }
+
+                    .icon-container .icons img {
+                        height: 5rem;
+                        margin-right: 2rem;
+                    }
+
+                    .icon-container .icons h3 {
+                        color: #333;
+                        padding-bottom: .5rem;
+                        font-size: 1.5rem;
+                    }
+
+                    .icon-container .icons span {
+                        color: #555;
+                        font-size: 1.3rem;
+                    }
+        </style>
+
+        <section class="icon-container">
+
+            <div class="icons">
+                <img src="~/Public/img/icon1.png" alt="">
+                <div class="info">
+                    <h3>Free Delivery</h3>
+                    <span>On All Orders</span>
+                </div>
+
+            </div>
+
+            <div class="icons">
+                <img src="~/Public/img/icon2.png" alt="">
+                <div class="info">
+                    <h3>10 Days Return</h3>
+                    <span>Moneyback Garantee</span>
+                </div>
+
+            </div>
+
+            <div class="icons">
+                <img src="~/Public/img/icon3.png" alt="">
+                <div class="info">
+                    <h3>Offer & Gifts</h3>
+                    <span>On All Orders</span>
+                </div>
+
+            </div>
+
+            <div class="icons">
+                <img src="~/Public/img/icon4.png" alt="">
+                <div class="info">
+                    <h3>Secure  Paymens</h3>
+                    <span>Protected By Paypa</span>
+                </div>
+
+            </div>
+
+        </section>
         @*================ Hero Carousel start =================*@
         @Html.Action("Slider", "Module")
         @*================ Hero Carousel end =================*@
@@ -115,92 +192,300 @@
         @*================ Best Selling item  carousel end =================*@
 
         @*================ Blog section start =================*@
+        <style>
+            .blog {
+                margin: 0 20px;
+            }
+
+            .heading {
+                text-align: center;
+                font-size: 4rem;
+                color: #333;
+                padding: 1rem;
+                margin: 2rem 0;
+                background: rgba(255, 95, 175, 0.111);
+            }
+
+                .heading span {
+                    color: var(--pink);
+                }
+        </style>
         <section class="blog">
-            <div class="container">
-                <div class="section-intro pb-60px">
-                    <p>Popular Item in the market</p>
-                    <h2>Latest <span class="section-intro__style">News</span></h2>
+            <h1 class="heading"> Latest <span>News</span></h1>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <!-- Adjusted column class to col-lg-3 -->
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="~/Public/img/blog/blog1.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                        <div class="card card-blog">
-                            <div class="card-blog__img">
-                                <img class="card-img rounded-0" src="~/Public/img/blog/blog1.jpg" alt="">
-                            </div>
-                            <div class="card-body">
-                                <ul class="card-blog__info">
-                                    <li><a href="#">By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-                                </ul>
-                                <h4 class="card-blog__title"><a href="single-blog.html">The Richland Center Shooping News and weekly shooper</a></h4>
-                                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-                            </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <!-- Adjusted column class to col-lg-3 -->
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="~/Public/img/blog/blog-2.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                        <div class="card card-blog">
-                            <div class="card-blog__img">
-                                <img class="card-img rounded-0" src="~/Public/img/blog/blog2.jpg" alt="">
-                            </div>
-                            <div class="card-body">
-                                <ul class="card-blog__info">
-                                    <li><a href="#">By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-                                </ul>
-                                <h4 class="card-blog__title"><a href="single-blog.html">The Shopping News also offers top-quality printing services</a></h4>
-                                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-                            </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <!-- Adjusted column class to col-lg-3 -->
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="~/Public/img/blog/blog4.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                        <div class="card card-blog">
-                            <div class="card-blog__img">
-                                <img class="card-img rounded-0" src="~/Public/img/blog/blog3.jpg" alt="">
-                            </div>
-                            <div class="card-body">
-                                <ul class="card-blog__info">
-                                    <li><a href="#">By Admin</a></li>
-                                    <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
-                                </ul>
-                                <h4 class="card-blog__title"><a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
-                                <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
-                                <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
-                            </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <!-- Adjusted column class to col-lg-3 -->
+                    <div class="card card-blog">
+                        <div class="card-blog__img">
+                            <img class="card-img rounded-0" src="~/Public/img/blog/blog-4.jpg" alt="">
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-blog__info">
+                                <li><a href="#">By Admin</a></li>
+                                <li><a href="#"><i class="ti-comments-smiley"></i> 2 Comments</a></li>
+                            </ul>
+                            <h4 class="card-blog__title"><a href="single-blog.html">Professional design staff and efficient equipment you’ll find we offer</a></h4>
+                            <p>Let one fifth i bring fly to divided face for bearing divide unto seed. Winged divided light Forth.</p>
+                            <a class="card-blog__link" href="#">Read More <i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         @*================ Blog section end =================*@
 
-        @*================ Subscribe section start =================*@
-        <section class="subscribe-position">
-            <div class="container">
-                <div class="subscribe text-center">
-                    <h3 class="subscribe__title">Get Update From Anywhere</h3>
-                    <p>Bearing Void gathering light light his eavening unto dont afraid</p>
-                    <div id="mc_embed_signup">
-                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
-                            <div class="form-group ml-sm-auto">
-                                <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
-                                <div class="info"></div>
-                            </div>
-                            <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                            </div>
+        @*================ Customer review start =================*@
+        <style>
+            .review{
+                margin: 0 20px;
+            }
+            .review .box-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                overflow-x: auto; 
+                
+            }
+            .review .box {
+                flex: 0 0 calc(33.333% - 2rem); 
+                box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+                border-radius: .5rem;
+                padding: 3rem 2rem;
+                position: relative;
+                border: 1rem solid rgba(0, 0, 0, .1);
+            }
 
-                        </form>
+                .review .box-container .box .fa-quote-right {
+                    position: absolute;
+                    bottom: 3rem;
+                    right: 3rem;
+                    font-size: 6rem;
+                    color: #eee;
+                }
+
+                .review .box-container .box .stars i {
+                    color: var(--pink);
+                    font-size: 2rem;
+                }
+
+                .review .box-container .box p {
+                    color: #999;
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                    text-transform: none;
+                }
+
+                .review .box-container .box .user {
+                    display: flex;
+                    align-items: center;
+                    padding-top: 2rem;
+                }
+
+                    .review .box-container .box .user img {
+                        height: 6rem;
+                        width: 6rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-right: 1rem;
+                    }
+
+                    .review .box-container .box .user h3 {
+                        font-size: 2rem;
+                        color: #333;
+                    }
+
+                    .review .box-container .box .user span {
+                        font-size: 1.5rem;
+                        color: #999;
+                    }
+        </style>
+    <section class="review" id="review">
+        <h1 class="heading"> Customer's <span>Review</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Quá xuất sắc</p>
+                <div class="user">
+                    <img src="~/Public/img/review-1.png">
+                    <div class="user-info">
+                        <h3>Trump</h3>
+                        <span>Happy customer</span>
                     </div>
-
                 </div>
             </div>
-        </section>
-        @*================ Subscribe section end =================*@
+
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Đẹp quá shop ơi 10đ</p>
+                <div class="user">
+                    <img src="~/Public/img/review-2.png">
+                    <div class="user-info">
+                        <h3>David</h3>
+                        <span>Happy customer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>OMG Unbelievable</p>
+                <div class="user">
+                    <img src="~/Public/img/review-3.png">
+                    <div class="user-info">
+                        <h3>Alex</h3>
+                        <span>Happy customer</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+        @*================  Customer review end =================*@
+
+        @*================ Contact section start =================*@
+        <style>
+            .contact{
+                margin: 0 20px;
+            }
+            .contact .row {
+                display: flex;
+                flex-wrap: wrap-reverse;
+                gap: 1.5rem;
+                align-items: center;
+                margin: 0 20px;
+            }
+
+                .contact .row form {
+                    flex: 1 1 40rem;
+                    padding: 2rem 2.5rem;
+                    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+                    border: .1rem solid rgba(0, 0, 0, .1);
+                    background: #fff;
+                    border-radius: .5rem;
+                }
+
+                .contact .row .image {
+                    flex: 1 1 40rem;
+                }
+
+                    .contact .row .image img {
+                        width: 100%;
+                    }
+
+                .contact .row form .box {
+                    padding: 1rem;
+                    font-size: 1.7rem;
+                    color: #333;
+                    text-transform: none;
+                    border: .1rem solid rgba(0, 0, 0, .1);
+                    border-radius: .5rem;
+                    margin: .7rem 0;
+                    width: 95%;
+                }
+
+                    .contact .row form .box:focus {
+                        border-color: var(--pink);
+                    }
+
+                .contact .row form textarea {
+                    height: 15rem;
+                    resize: none;
+                    
+                }
+            .btn {
+                background-color: var(--pink);
+                color: floralwhite;
+            }
+        </style>
+    <section class="contact" id="contact">
+        <h1 class="heading"> Contact <span>Us</span></h1>
+        <div class="row">
+            <form action="">
+                <input type="text" placeholder="Name" class="box">
+                <input type="email" placeholder="Number" class="box">
+                <textarea name="" class="box" placeholder="Message" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </form>
+            <div class="image">
+                <img src="~/Public/img/home/footer.jpg" alt="">
+            </div>
+        </div>
+    </section>
+        @*================ Contact section end =================*@
     </main>
 </body>

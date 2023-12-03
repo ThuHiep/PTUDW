@@ -9,22 +9,27 @@
 <div class="content-wrapper">
 
     <!-- Main content -->
-    <section class="content my-2">
+    <section class="content">
 
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <div class="row">
-                    <div class="col-md-6">
-                        <strong>TITLE</strong>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        LINK
-                    </div>
-                </div>
+                    <header>
+                        <h1>FLOWER</h1>
+                    </header>
             </div>
             <div class="card-body">
-                NOI DUNG
+                
+               
+                <section class="main-content">
+                    <article>
+                        <h2>Welcome to Admin Page</h2>
+                        
+                        <img src="~/Public/img/adminpage.png" alt="Dashboard Image">
+                    </article>
+                </section>
+               
+
                 <!-- /.card-body -->
             </div>
         </div>
@@ -34,3 +39,22 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<style>
+    header {
+        background: rgba(255, 95, 175, 0.111);
+        color: black;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .main-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    article img {
+        max-width: 100%;
+        height: auto;
+    }
+
+</style>

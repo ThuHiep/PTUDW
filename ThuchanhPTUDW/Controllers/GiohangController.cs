@@ -69,7 +69,7 @@ namespace ThuchanhPTUDW.Controllers
 
         //////////////////////////////////////////////////////////////////
         ///DelCart
-        public ActionResult DelCart(int productid)
+        public ActionResult CartDel(int productid)
         {
             xcart.DelCart(productid);
             return RedirectToAction("Index", "Giohang");

@@ -279,6 +279,7 @@
     <Content Include="Public\dist\js\pages\dashboard2.js" />
     <Content Include="Public\dist\js\pages\dashboard3.js" />
     <Content Include="Public\img\about.jpg" />
+    <Content Include="Public\img\adminpage.png" />
     <Content Include="Public\img\blog\add.jpg" />
     <Content Include="Public\img\blog\author.png" />
     <Content Include="Public\img\blog\blog-2.jpg" />
@@ -363,6 +364,7 @@
     <Content Include="Public\img\slider5.jpg" />
     <Content Include="Public\img\slider6.jpg" />
     <Content Include="Public\img\slider\slider-20.jpg" />
+    <Content Include="Public\img\thuhiep4.jpg" />
     <Content Include="Public\img\title.jpg" />
     <Content Include="Public\js\jquery.dataTables.min.js" />
     <Content Include="Public\js\main.js" />

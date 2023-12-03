@@ -48,7 +48,7 @@ namespace MyClass.Model
         public int Amount { get; set; }
 
         [Required(ErrorMessage = "Mô tả không được để trống")]
-        [Display(Name = "Tên loại SP")]
+        [Display(Name = "Mô tả")]
         public string MetaDesc { get; set; }
 
         [Required(ErrorMessage = "Từ khóa không được để trống")]
@@ -56,7 +56,7 @@ namespace MyClass.Model
         public string MetaKey { get; set; }
 
         [Required(ErrorMessage = "Người tạo không được để trống")]
-        [Display(Name = "Tên loại SP")]
+        [Display(Name = "Người tạo")]
         public int CreateBy { get; set; }
 
         [Required(ErrorMessage = "Ngày tạo không được để trống")]

@@ -6,22 +6,6 @@
 
 <body>
     <!-- ================ start banner area ================= -->
-    @*<section class="blog-banner-area" id="blog">
-            <div class="container h-100">
-                <div class="blog-banner">
-                    <div class="text-center">
-                        <h1>@Model.Title</h1>
-                        <nav aria-label="breadcrumb" class="banner-breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Chi tiết bài viết</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </section>*@
-
 
     <section class="details">
         <h1>Giới thiệu</h1>
@@ -39,82 +23,14 @@
     </style>
     <!-- ================ end banner area ================= -->
     <!--================Blog Area =================-->
-    @*<section class="blog_area single-post-area py-80px section-margin--small">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 posts-list">
-                        <div class="single-post row">
-                            <div class="col-lg-12">
-                                <div class="feature-img">
-                                    <img class="img-fluid" src="~/Public/img/page/@Model.Image" alt="">
-                                </div>
-                            </div>
 
-                            <div class="col-lg-9 col-md-9 blog_details">
-                                @Model.Detail
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog_right_sidebar">
-                            <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title">Chủ đề bài viết</h4>
-                                <ul class="list cat-list">
-                                    <li>
-                                        <a href="#" class="d-flex justify-content-between">
-                                            <p>Technology</p>
-                                            <p>37</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="br"></div>
-                            </aside>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>*@
+    <style>
+        
 
-
-    <section class="about" id="about">
-
-        <div class="row">
-            <div class="img-container">
-                <img src="~/Public/img/about.jpg" />
-                <h3>
-                    Best Flower Sellers
-                </h3>
-            </div>
-
-            <div class="content">
-                <h3>Why Choose Us ?</h3>
-                <p>Flower Dreams by Sonn đảm bảo chất lượng và sự tươi mới của từng đóa hoa tulip thông qua việc trồng và chăm sóc bởi những nông dân tận tâm.</p>
-                <p>
-                    Khi chọn mua hoa tulip tại Flower dreams by Sonn, khách hàng không chỉ được tận hưởng vẻ đẹp của loài hoa này
-                    mà còn có thể truyền tải được những thông điệp yêu thương và lời chúc tốt đẹp đến người nhận.
-                </p>
-            </div>
-           
-        </div>
-
-    </section>
-    <!--================Blog Area =================-->
-</body>
-<style>
-    .about .row {
-        display: flex;
-        align-items: center;
-        gap: 5rem;
-        flex-wrap: wrap;
-        padding: 2rem 0;
-        padding-bottom: 3rem;
-        margin: 0 20px;
-    }
-
-        .about .row .img-container {
-            flex: 1 1 40rem;
-            position: relative;
-        }
+            .about .row .img-container {
+                flex: 1 1 40rem;
+                position: relative;
+            }
 
             .about .row .img-container img {
                 width: 100%;
@@ -137,21 +53,53 @@
                 mix-blend-mode: screen;
             }
 
-        .about .row .content {
-            flex: 1 1 40rem;
+            .about .row .content {
+                flex: 1 1 40rem;
+            }
+
+        .about .row .content h3 {
+            font-size: 3rem;
+            color: #333;
         }
 
-            .about .row .content h3 {
-                font-size: 3rem;
-                color: #333;
-            }
+        .about .row .content p {
+            font-size: 1.5rem;
+            color: #999;
+            padding: 2rem 0;
+            padding-top: 1rem;
+            line-height: 1.5;
+            text-transform: none;
+        }
 
-            .about .row .content p {
-                font-size: 1.5rem;
-                color: #999;
-                padding: 5rem 0;
-                padding-top: 1rem;
-                line-height: 1.5;
-                text-transform: none;
-            }
-</style>
+               
+    </style>
+
+
+
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col">
+                <div class="img-container">
+                    <img src="~/Public/img/about.jpg" />
+                    <h3>
+                        Best Flower Sellers
+                    </h3>
+                </div>
+             </div>
+            <div class="col">
+                <div class="content">
+                    <h3>Why Choose Us ?</h3>
+                    <p>Flower Dreams by Sonn đảm bảo chất lượng và sự tươi mới của từng đóa hoa  thông qua việc trồng và chăm sóc bởi những nông dân tận tâm.</p>
+                    <p>
+                        Khi chọn mua hoa  tại Flower Dreams by Sonn, khách hàng không chỉ được tận hưởng vẻ đẹp của loài hoa này
+                        mà còn có thể truyền tải được những thông điệp yêu thương và lời chúc tốt đẹp đến người nhận.
+                    </p>
+                </div>
+            </div>
+                
+            </div>
+</section>
+
+    <!--================Blog Area =================-->
+</body>
+

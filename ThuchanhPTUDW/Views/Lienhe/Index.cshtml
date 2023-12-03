@@ -4,5 +4,101 @@
     Layout = "~/Views/Shared/_LayoutSite.cshtml";
 }
 
-<h2>Index</h2>
+@*================ Contact section start =================*@
+<!-- Thêm thư viện SweetAlert2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    .heading {
+        text-align: center;
+        font-size: 4rem;
+        color: #333;
+        padding: 1rem;
+        margin: 2rem 0;
+        background: rgba(255, 95, 175, 0.111);
+    }
+
+        .heading span {
+            color: var(--pink);
+        }
+
+    .contact {
+        margin: 0 20px;
+    }
+
+            .contact .row form {
+                flex: 1 1 40rem;
+                padding: 2rem 2.5rem;
+                box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+                border: .1rem solid rgba(0, 0, 0, .1);
+                background: #fff;
+                border-radius: .5rem;
+            }
+
+        .contact .row .image {
+            flex: 1 1 40rem;
+        }
+
+            .contact .row .image img {
+                width: 100%;
+            }
+
+        .contact .row form .box {
+            padding: 1rem;
+            font-size: 1.7rem;
+            color: #333;
+            text-transform: none;
+            border: .1rem solid rgba(0, 0, 0, .1);
+            border-radius: .5rem;
+            margin: .7rem 0;
+            width: 95%;
+        }
+
+        .contact .rowm form .box:focus {
+            border-color: var(--pink);
+        }
+
+        .contact .row form textarea {
+            height: 15rem;
+            resize: none;
+        }
+
+    .btn-mess {
+        background-color: var(--pink);
+        color: floralwhite;
+    }
+</style>
+<script>
+    function showMessage() {
+        // Sử dụng SweetAlert2 để hiển thị thông báo
+        Swal.fire({
+            icon: 'success',
+            title: 'Message Sent!',
+            text: 'Your message has been sent successfully.',
+        });
+    }
+</script>
+
+<section class="contact" id="contact">
+    <h1 class="heading"> Contact <span>Us</span></h1>
+    <div class="row">
+
+        <div class="col">
+            <form action="" onsubmit="showMessage(); return false;">
+                <input type="text" placeholder="Name" class="box">
+                <input type="email" placeholder="Email" class="box">
+                <textarea name="" class="box" placeholder="Message" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="Send Message" class="btn-mess">
+            </form>
+        </div>
+        <div class="col">
+            <div class="image">
+                <img src="~/Public/img/home/footer.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+@*================ Contact section end =================*@
 

@@ -13,6 +13,7 @@ namespace ThuchanhPTUDW.Controllers
     {
         //////////////////////////////////////////////////////////////////////////
         // GET: Khachhang DangNhap
+        // GET: Customer
         public ActionResult DangNhap()
         {
             return View();
@@ -31,19 +32,55 @@ namespace ThuchanhPTUDW.Controllers
             {
                 strErr = "Tên đăng nhập không tồn tại";
                 ViewBag.Error = "<span class='text-danger'>" + strErr + "</div";
-                return View("DangNhap");
+                return View("Login");
             }
             else
             {
                 return RedirectToAction("Index", "Site");
             }
-            
+
         }
+
 
         //////////////////////////////////////////////////////////////////////////
         // GET: Khachhang DangKy
         public ActionResult DangKy()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DangKy(FormCollection form)
+        {
+            if (!string.IsNullOrEmpty(form["register"]))//nut ThemCategory duoc nhan
+            {
+                UsersDAO usersDAO = new UsersDAO();
+                String fullname = form["fullname"];
+                String email = form["email"];
+                String phone = form["phone"];
+                String username = form["username"];
+                String password = form["password"];
+                Users row_user = usersDAO.getRow(username, "customer");
+                //xu ly tu dong cho 1 so truong
+                if (row_user != null)
+                {
+                    ViewBag.Err = "Tài khoản đã tồn tại";
+                }
+                else
+                {
+                    Users users = new Users();
+                    users.Fullname = fullname;
+                    users.Status = 1;
+                    users.Role = "customer";
+                    // xu ly cac truong nhap vao
+                    users.Phone = phone;
+                    users.Email = email;
+                    users.Gender = "1";
+                    users.Username = username;
+                    users.Password = password;
+                    usersDAO.Insert(users);
+                    ViewBag.Err = "Tạo tài khoản thành công";
+                }
+            }
             return View();
         }
     }
